@@ -81,7 +81,7 @@ export default function PodcastPage() {
                 <span className="pod-feature-kicker">Latest episode</span>
                 <h3>{latest.title}</h3>
                 <div className="pod-feature-guest">{latest.guestName || 'OB Academy'}</div>
-                <Link className="btn btn-primary" href={`/podcast/${latest.slug}`}>Listen now</Link>
+                <Link className="btn btn-primary" href={`/podcast/episode/?e=${latest.slug}`}>Listen now</Link>
               </div>
             </Tilt>
             </div>
@@ -113,7 +113,7 @@ export default function PodcastPage() {
             <ol className="pod-list">
               {paged.map((ep) => (
                 <li key={ep.slug}>
-                  <Link href={`/podcast/${ep.slug}`} className="pod-row">
+                  <Link href={`/podcast/episode/?e=${ep.slug}`} className="pod-row">
                     <div className="pod-row-art">
                       <PodcastThumb src={ep.poster || ep.guestPhoto} episode={ep.episode} title={ep.title} guest={ep.guestName} compact />
                       <span className="pod-row-play">{locked ? lockSvg : playSvg}</span>

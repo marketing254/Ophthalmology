@@ -25,7 +25,7 @@ export default function Marquee() {
   const items = [];
   if (latest) {
     items.push(
-      <Link className="mq-item" href={`/podcast/${latest.slug}`} key="pod">
+      <Link className="mq-item" href={`/podcast/episode/?e=${latest.slug}`} key="pod">
         <span className="mq-tag">Latest Podcast</span>
         <span className="mq-text">Episode {latest.episode}: {latest.title}</span>
       </Link>

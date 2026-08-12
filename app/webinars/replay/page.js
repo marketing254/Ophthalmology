@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useSheet } from '@/app/lib/useSheet';
 import { normalizeWebinar } from '@/app/lib/models';
 import { isUnlocked } from '@/app/lib/leads';
@@ -10,8 +10,8 @@ import SmartImage from '@/components/SmartImage';
 import LeadGate from '@/components/LeadGate';
 import Transcript from '@/components/Transcript';
 
-export default function WebinarDetailPage() {
-  const { slug } = useParams();
+function ReplayContent() {
+  const slug = useSearchParams().get('e') || '';
   const { rows, loading } = useSheet('replays', normalizeWebinar);
 
   const [unlocked, setUnlocked] = useState(false);
@@ -206,7 +206,7 @@ export default function WebinarDetailPage() {
           {(previous || next) && (
             <div className="prev-next">
               {previous ? (
-                <Link href={`/webinars/${previous.slug}`}>
+                <Link href={`/webinars/replay/?e=${previous.slug}`}>
                   <div className="dir">← Previous</div>
                   <div className="t">{previous.title}</div>
                 </Link>
@@ -214,7 +214,7 @@ export default function WebinarDetailPage() {
                 <span />
               )}
               {next ? (
-                <Link href={`/webinars/${next.slug}`} className="right">
+                <Link href={`/webinars/replay/?e=${next.slug}`} className="right">
                   <div className="dir">Next</div>
                   <div className="t">{next.title}</div>
                 </Link>
@@ -226,5 +226,19 @@ export default function WebinarDetailPage() {
         </div>
       </section>
     </>
+  );
+}
+
+const pageFallback = (
+  <div className="wrap" style={{ padding: '72px 0' }}>
+    <div className="state"><div className="spinner" />Loading…</div>
+  </div>
+);
+
+export default function WebinarReplayPage() {
+  return (
+    <Suspense fallback={pageFallback}>
+      <ReplayContent />
+    </Suspense>
   );
 }

@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import './podepisode.css';
 import { useSheet } from '@/app/lib/useSheet';
 import { normalizePodcast } from '@/app/lib/models';
@@ -19,8 +19,8 @@ import BrandIcon from '@/components/BrandIcon';
 const linkHref = (v) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? `mailto:${v}` : /^https?:/i.test(v) ? v : v ? `https://${v}` : '#';
 
-export default function PodcastDetailPage() {
-  const { slug } = useParams();
+function EpisodeContent() {
+  const slug = useSearchParams().get('e') || '';
   const { rows, loading } = useSheet('podcasts', normalizePodcast);
   const [unlocked, setUnlocked] = useState(false);
   const [shareUrl, setShareUrl] = useState('');
@@ -192,15 +192,29 @@ export default function PodcastDetailPage() {
           {(prev || next) && (
             <div className="pe-nav">
               {prev ? (
-                <Link href={`/podcast/${prev.slug}`}><div className="dir">← Previous</div><div className="t">{prev.title}</div></Link>
+                <Link href={`/podcast/episode/?e=${prev.slug}`}><div className="dir">← Previous</div><div className="t">{prev.title}</div></Link>
               ) : <span />}
               {next ? (
-                <Link href={`/podcast/${next.slug}`} className="right"><div className="dir">Next →</div><div className="t">{next.title}</div></Link>
+                <Link href={`/podcast/episode/?e=${next.slug}`} className="right"><div className="dir">Next →</div><div className="t">{next.title}</div></Link>
               ) : <span />}
             </div>
           )}
         </div>
       </section>
     </div>
+  );
+}
+
+const pageFallback = (
+  <div className="wrap" style={{ padding: '72px 0' }}>
+    <div className="state"><div className="spinner" />Loading…</div>
+  </div>
+);
+
+export default function PodcastEpisodePage() {
+  return (
+    <Suspense fallback={pageFallback}>
+      <EpisodeContent />
+    </Suspense>
   );
 }

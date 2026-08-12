@@ -54,7 +54,7 @@ export default function WebinarReplaysPage() {
           ) : (
             <div className="rp-grid">
               {paged.map((w) => (
-                <Link key={w.id} href={`/webinars/${w.slug}`} className="rp-card">
+                <Link key={w.id} href={`/webinars/replay/?e=${w.slug}`} className="rp-card">
                   <div className="rp-thumb">
                     <SmartImage src={w.thumbnail} alt={w.title} fallback={w.title} />
                     <span className="rp-play">

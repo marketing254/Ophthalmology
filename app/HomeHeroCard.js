@@ -22,7 +22,7 @@ export default function HomeHeroCard() {
       <div className="hero-card-body">
         <span className="hero-card-kicker">Latest episode · Ep {latest.episode}</span>
         <h3>{latest.title}</h3>
-        <Link className="btn btn-primary" href={`/podcast/${latest.slug}`}>Listen now</Link>
+        <Link className="btn btn-primary" href={`/podcast/episode/?e=${latest.slug}`}>Listen now</Link>
       </div>
     </Tilt>
   );

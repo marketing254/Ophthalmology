@@ -37,7 +37,7 @@ export default function HomeEpisodes() {
                         : 'OB Academy'}
                   </span>
                 </div>
-                <Link className="ep-link" href={`/podcast/${ep.slug}`}>
+                <Link className="ep-link" href={`/podcast/episode/?e=${ep.slug}`}>
                   Listen to the episode
                 </Link>
               </div>
