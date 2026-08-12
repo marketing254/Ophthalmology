@@ -20,8 +20,10 @@ jobs:
     env:
       # Site is served at https://<user>.github.io/Ophthalmology/
       NEXT_PUBLIC_BASE_PATH: /Ophthalmology
-      # Apps Script endpoint (public by design — it ships to the browser).
-      NEXT_PUBLIC_APPS_SCRIPT_URL: https://script.google.com/macros/s/AKfycbyjld0QAIsk2xvc5xWoVeEbBzoCC5VnELzK_hzpqajONnGLIXWqWOdZ7Y2ifsTmR6i1JA/exec
+      # Apps Script endpoint (public by design, it ships to the browser).
+      # Override without a code change: repo Settings -> Secrets and variables ->
+      # Actions -> Variables -> NEXT_PUBLIC_APPS_SCRIPT_URL
+      NEXT_PUBLIC_APPS_SCRIPT_URL: ${{ vars.NEXT_PUBLIC_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbyjld0QAIsk2xvc5xWoVeEbBzoCC5VnELzK_hzpqajONnGLIXWqWOdZ7Y2ifsTmR6i1JA/exec' }}
     steps:
       - uses: actions/checkout@v4
 
