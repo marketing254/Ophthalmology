@@ -1,0 +1,33 @@
+/* ===== Reviews — "testimonial wall" identity ===== */
+.rv2-hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:56px 0 60px}
+.rv2-hero-grid{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center}
+.rv2-score{text-align:center;padding-right:56px;border-right:1px solid rgba(255,255,255,.16)}
+.rv2-num{font:600 84px var(--font-display);line-height:.9;color:#fff}
+.rv2-stars{color:#E8A93A;font-size:22px;letter-spacing:3px;margin:10px 0 6px}
+.rv2-count{font-size:13px;color:#93A9CE;letter-spacing:.05em;text-transform:uppercase}
+.rv2-lead h1{color:#fff;font-size:clamp(28px,3.6vw,46px);font-weight:600;line-height:1.14;margin:6px 0 14px;max-width:520px}
+.rv2-lead p{color:#C9D9F5;font-size:17px;line-height:1.7;max-width:480px}
+
+.rv2-body{padding:64px 0 84px}
+.rv2-wall{columns:3;column-gap:24px}
+.rv2-quote{break-inside:avoid;margin:0 0 24px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 26px 22px;position:relative}
+.rv2-quote::before{content:"\201C";position:absolute;top:6px;left:18px;font-family:var(--font-display);font-size:70px;line-height:1;color:var(--mist)}
+.rv2-q-stars{position:relative;color:#E8A93A;letter-spacing:2px;font-size:14px;margin-bottom:12px}
+.rv2-quote blockquote{position:relative;font-family:var(--font-display);font-size:17px;line-height:1.55;color:var(--ink);margin:0 0 18px}
+.rv2-quote figcaption{display:flex;align-items:center;gap:12px}
+.rv2-avatar,.rv2-avatar img,.rv2-avatar[data-fallback]{width:42px;height:42px;border-radius:50%;object-fit:cover;font-size:14px;flex:none}
+.rv2-quote figcaption span{display:flex;flex-direction:column}
+.rv2-quote figcaption b{font-size:14px;font-weight:600;color:var(--ink)}
+.rv2-quote figcaption em{font-style:normal;font-size:12.5px;color:var(--slate)}
+.rv2-plat{margin-left:auto!important;flex:none;font-size:11px;color:var(--slate);background:var(--mist);border:1px solid var(--line);padding:3px 9px;border-radius:6px}
+
+.rv2-foot{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:44px;padding-top:36px;border-top:1px solid var(--line)}
+.rv2-foot span{font-family:var(--font-display);font-size:19px;color:var(--ink)}
+
+@media(max-width:960px){.rv2-wall{columns:2}}
+@media(max-width:720px){
+  .rv2-hero-grid{grid-template-columns:1fr;gap:26px}
+  .rv2-score{border-right:0;border-bottom:1px solid rgba(255,255,255,.16);padding:0 0 24px;text-align:left;display:flex;align-items:baseline;gap:18px}
+  .rv2-num{font-size:56px}
+}
+@media(max-width:560px){.rv2-wall{columns:1}}

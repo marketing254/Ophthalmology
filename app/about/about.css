@@ -1,0 +1,88 @@
+/* ---------- About: editorial statement hero ---------- */
+.page-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);padding:72px 0 60px}
+.page-hero h1{font-size:clamp(36px,6vw,72px);font-weight:600;letter-spacing:-.015em;line-height:1.05;margin:14px 0 22px;max-width:900px}
+.page-hero h1 em{font-style:italic;color:var(--blue)}
+.page-hero p{font-size:19px;color:var(--slate);max-width:560px;line-height:1.6}
+
+/* ---------- Story ---------- */
+.story{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.story h2{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.02em;margin:14px 0 18px}
+.story .copy p{color:var(--ink-soft);font-size:16px;margin-bottom:16px}
+.story .copy p b{color:var(--ink)}
+.founder-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:var(--shadow)}
+.founder-card .ph{width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid var(--white);box-shadow:var(--shadow);margin-bottom:18px}
+.founder-card .ph img{width:100%;height:100%;object-fit:cover}
+.founder-card blockquote{font-family:var(--font-display);font-size:19px;font-weight:500;line-height:1.5;color:var(--ink);margin-bottom:18px}
+.founder-card blockquote span{color:var(--royal)}
+.founder-card cite{display:block;font-style:normal;font-size:14px;color:var(--ink-soft)}
+.founder-card cite b{display:block;color:var(--ink);font-size:15px}
+
+/* ---------- Timeline ---------- */
+.timeline{position:relative;max-width:760px;margin:52px auto 0;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;padding-bottom:34px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-31px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--sky);border:3px solid var(--white);box-shadow:0 0 0 2px var(--sky-tint)}
+.tl-item .yr{font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--royal)}
+.tl-item h3{font-size:17px;font-weight:600;margin:4px 0 5px}
+.tl-item p{font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- Values ---------- */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.value{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:transform .2s,box-shadow .2s}
+.value:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.value .ic{width:46px;height:46px;border-radius:12px;background:var(--sky-tint);display:grid;place-items:center;margin-bottom:18px}
+.value .ic svg{width:23px;height:23px;stroke:var(--royal);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.value h3{font-size:18px;font-weight:600;margin-bottom:9px}
+.value p{font-size:14.5px;color:var(--ink-soft)}
+
+/* ---------- Mission band ---------- */
+.mission{background:var(--ink);color:#fff;text-align:center}
+.mission .wrap-narrow p.big{font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:600;line-height:1.45;margin:18px 0 0}
+.mission .wrap-narrow p.big span{color:var(--sky)}
+.mission .eyebrow{color:var(--sky)}
+
+/* ---------- Team ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.member{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .2s,box-shadow .2s}
+.member:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.member .top{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.member .ph{width:64px;height:64px;border-radius:50%;overflow:hidden;flex:none;background:linear-gradient(135deg,var(--sky-tint),var(--royal-tint));border:2px solid var(--white);box-shadow:var(--shadow)}
+.member .ph img{width:100%;height:100%;object-fit:cover}
+.member h3{font-size:16.5px;font-weight:600}
+.member .role{font-size:13px;color:var(--royal);font-weight:600}
+.member p{font-size:14px;color:var(--ink-soft)}
+.member a.li{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13.5px;font-weight:600;color:var(--royal)}
+.member a.li:hover{color:var(--sky)}
+.team-note{text-align:center;margin-top:36px;font-size:14.5px;color:var(--ink-soft)}
+.team-note a{font-weight:600;color:var(--royal)}
+
+/* ---------- Ekwa band ---------- */
+.ekwa{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ekwa .inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.ekwa h2{font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.02em;margin:14px 0 14px}
+.ekwa p{color:var(--ink-soft);font-size:15.5px;margin-bottom:14px}
+.ekwa-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ekwa-stat{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center}
+.ekwa-stat b{display:block;font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--royal)}
+.ekwa-stat span{font-size:13px;color:var(--ink-soft)}
+.ekwa .btn-ghost{background:var(--white);color:var(--ink);border:2px solid var(--line)}
+.ekwa .btn-ghost:hover{border-color:var(--royal);color:var(--royal)}
+
+/* ---------- About CTA band ---------- */
+.about-cta .inner{background:linear-gradient(120deg,var(--royal) 0%,var(--sky) 100%);border-radius:22px;color:#fff;padding:56px;text-align:center;position:relative;overflow:hidden}
+.about-cta .inner::after{content:"";position:absolute;right:-90px;bottom:-130px;width:330px;height:330px;border:46px solid rgba(255,255,255,.12);border-radius:50%}
+.about-cta h2{color:#fff;font-size:clamp(24px,3vw,32px);font-weight:700;margin-bottom:12px}
+.about-cta p{font-size:15.5px;color:#E9F6EE;max-width:520px;margin:0 auto 26px}
+.about-cta .row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+
+@media (max-width:980px){
+  .story-grid,.ekwa .inner{grid-template-columns:1fr;gap:40px}
+  .values-grid,.team-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .values-grid,.team-grid{grid-template-columns:1fr}
+  .ekwa-stats{grid-template-columns:1fr 1fr}
+  .about-cta .inner{padding:44px 28px}
+}

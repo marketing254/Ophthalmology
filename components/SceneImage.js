@@ -1,0 +1,21 @@
+'use client';
+
+import { useState } from 'react';
+
+/**
+ * Scenic photography with a guaranteed fallback: if the remote image fails,
+ * swaps to the local hero photo so the layout never shows a broken frame.
+ */
+export default function SceneImage({ src, alt = '', className, style, fallback = '/hero.jpg' }) {
+  const [cur, setCur] = useState(src);
+  return (
+    <img
+      src={cur}
+      alt={alt}
+      loading="lazy"
+      className={className}
+      style={style}
+      onError={() => { if (cur !== fallback) setCur(fallback); }}
+    />
+  );
+}

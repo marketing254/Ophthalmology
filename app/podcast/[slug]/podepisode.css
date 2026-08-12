@@ -1,0 +1,87 @@
+/* ===== Podcast episode — premium detail page ===== */
+.pe{background:#F3F6FC}
+
+/* Hero */
+.pe-hero{position:relative;background:radial-gradient(120% 130% at 82% -10%, #16295C 0%, var(--navy) 58%);color:#fff;padding:34px 0 48px;overflow:hidden}
+.pe-hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.pe-back{position:relative;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:#93A9CE;margin-bottom:26px}
+.pe-back:hover{color:#fff}
+.pe-hero-grid{position:relative;display:grid;grid-template-columns:212px 1fr;gap:34px;align-items:center}
+.pe-art{width:212px;height:212px;border-radius:16px;overflow:hidden;background:#101F45;box-shadow:0 24px 60px rgba(0,0,0,.4);flex:none}
+.pe-art img,.pe-art [data-fallback]{width:100%;height:100%;object-fit:cover;font-size:52px}
+.pe-eyebrow{display:inline-flex;align-items:center;gap:8px;font:700 11.5px var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.pe-title{color:#fff;font-size:clamp(26px,3.4vw,42px);font-weight:800;line-height:1.14;letter-spacing:-.02em;margin-bottom:16px;max-width:760px}
+.pe-tags{display:flex;flex-wrap:wrap;gap:9px}
+.pe-tag{display:inline-flex;align-items:center;gap:6px;font:600 12.5px var(--font-body);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:#D8E5FA;padding:6px 13px;border-radius:100px}
+
+/* Body */
+.pe-body{padding:44px 0 84px}
+.pe-grid{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
+.pe-main{min-width:0;display:flex;flex-direction:column;gap:28px}
+.pe-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:28px 30px}
+.pe-card h2{font-size:20px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.pe-card h2::before{content:"";width:4px;height:20px;border-radius:3px;background:var(--teal)}
+.pe-notes p{font-size:15.5px;line-height:1.75;color:var(--ink-soft);margin-bottom:14px}
+.pe-notes p:last-child{margin-bottom:0}
+.pe-notes .kp-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0;padding:0}
+.pe-notes .kp-list>li{position:relative;padding-left:28px;font-size:15.5px;line-height:1.65;color:var(--ink-soft)}
+.pe-notes .kp-list>li::before{content:"";position:absolute;left:0;top:8px;width:13px;height:13px;border-radius:50%;background:var(--sky-tint);border:3px solid var(--teal)}
+.pe-notes .kp-group{padding-left:0!important}
+.pe-notes .kp-group::before{display:none}
+.pe-notes .kp-group h3{font-size:16.5px;font-weight:700;margin-bottom:10px}
+.pe-notes .kp-group ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:18px;padding:0}
+.pe-notes .kp-group ul li{position:relative;padding-left:20px;font-size:14.5px;color:var(--ink-soft)}
+.pe-notes .kp-group ul li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+/* Panelists */
+.pe-spk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:18px}
+.pe-spk{text-align:center}
+.pe-spk .ph,.pe-spk .ph img,.pe-spk .ph [data-fallback]{width:76px;height:76px;border-radius:50%;object-fit:cover;margin:0 auto 9px;font-size:20px}
+.pe-spk .ph{overflow:hidden;border:2px solid var(--mist)}
+.pe-spk .nm{font:600 13.5px var(--font-display)}
+.pe-spk .rl{font-size:11.5px;color:var(--teal);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+
+/* Side */
+.pe-side{position:sticky;top:calc(var(--header-h) + 20px);display:flex;flex-direction:column;gap:20px}
+.pe-guest{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:24px;text-align:center}
+.pe-guest .ph,.pe-guest .ph img,.pe-guest .ph [data-fallback]{width:88px;height:88px;border-radius:50%;object-fit:cover;margin:0 auto 14px;font-size:24px}
+.pe-guest .ph{overflow:hidden;border:3px solid var(--mist);box-shadow:var(--shadow)}
+.pe-guest .pe-guest-k{font:600 11px var(--font-display);letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.pe-guest h3{font-size:18px;font-weight:700;margin:5px 0 14px}
+.pe-side-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px 24px}
+.pe-side-card h4{font:600 11.5px var(--font-display);letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:14px}
+.pe-links{display:flex;flex-direction:column;gap:9px}
+.pe-links a{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--navy);padding:10px 12px;border:1px solid var(--line);border-radius:9px;transition:border-color .15s,background .15s}
+.pe-links a:hover{border-color:var(--teal);background:var(--mist)}
+.pe-contact{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.pe-contact li{font-size:13px;color:var(--slate);word-break:break-word}
+.pe-contact li b{color:var(--ink);font-weight:600}
+.pe-share{display:flex;gap:9px}
+.pe-share a{width:38px;height:38px;border-radius:9px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--navy);transition:all .15s}
+.pe-share a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pe-share svg{width:17px;height:17px}
+
+/* Prev / next */
+.pe-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+.pe-nav a{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:box-shadow .18s,border-color .18s}
+.pe-nav a:hover{box-shadow:var(--shadow);border-color:var(--teal)}
+.pe-nav .dir{font:600 11.5px var(--font-display);letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+.pe-nav .t{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.4}
+.pe-nav .right{text-align:right}
+
+@media(max-width:920px){
+  .pe-grid{grid-template-columns:1fr}
+  .pe-side{position:static;flex-direction:row;flex-wrap:wrap}
+  .pe-side>*{flex:1 1 240px}
+}
+@media(max-width:600px){
+  .pe-hero-grid{grid-template-columns:1fr;gap:22px}
+  .pe-art{width:140px;height:140px}
+  .pe-nav{grid-template-columns:1fr}
+}
+
+/* Transcript polish within the episode card */
+.pe-card .transcript{margin-top:0}
+.pe-card .transcript h2::before{content:none}
+.pe-card .ts-text{font-size:15.5px;line-height:1.78}
+.pe-card .ts-body{max-height:600px}
