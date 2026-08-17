@@ -109,7 +109,7 @@ section{padding:84px 0}
 .mq-run{display:inline-flex;align-items:center}
 .mq-item{display:inline-flex;align-items:center;gap:10px;padding:9px 28px;font-size:13.5px;color:#E2E8ED;border-right:1px solid rgba(255,255,255,.1)}
 .mq-item:hover .mq-text{color:#fff;text-decoration:underline}
-.mq-tag{display:inline-flex;align-items:center;gap:5px;font:700 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:var(--teal);white-space:nowrap}
+.mq-tag{display:inline-flex;align-items:center;gap:5px;font:700 11px var(--font-body);letter-spacing:.06em;text-transform:uppercase;color:#9DBBD4;white-space:nowrap}
 .mq-text{color:#D3DDE5;font-weight:500;white-space:nowrap}
 @keyframes mq-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.mq-track{animation:none}}
