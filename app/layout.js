@@ -1,4 +1,5 @@
 import { Outfit, DM_Sans } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import './dynamic.css';
 import Header from '@/components/Header';
@@ -91,6 +92,13 @@ export default function RootLayout({ children }) {
         <Footer />
         <ScrollReveal />
         <CardTilt />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-6GDGK5QGS4" strategy="afterInteractive" />
+        <Script id="ga-gtag" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6GDGK5QGS4');`}
+        </Script>
       </body>
     </html>
   );
