@@ -238,9 +238,6 @@ export default function AboutPage() {
                 <h3>{m.name}</h3>
                 <span className="role">{m.role}</span>
                 <p>{m.bio}</p>
-                <a className="li" href="https://www.linkedin.com/company/ophthalmology-business-academy/">
-                  LinkedIn
-                </a>
               </article>
             ))}
           </div>
