@@ -41,14 +41,14 @@ export const metadata = {
     title: 'Ophthalmology Business Academy | The Business of Eye Care',
     description:
       'Live expert panels, a free podcast, and practical playbooks on growing an ophthalmology practice.',
-    images: [{ url: `${SITE_URL}/hero.jpg`, width: 1800, height: 1200, alt: 'Close-up of a human eye' }],
+    images: [{ url: `${SITE_URL}/og-cover.png`, width: 1200, height: 630, alt: 'Ophthalmology Business Academy, The Business of Eye Care' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ophthalmology Business Academy',
     description:
       'Live expert panels, a free podcast, and practical playbooks on growing an ophthalmology practice.',
-    images: [`${SITE_URL}/hero.jpg`],
+    images: [`${SITE_URL}/og-cover.png`],
   },
   robots: { index: true, follow: true },
 };
