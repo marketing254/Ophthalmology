@@ -1,5 +1,4 @@
 import './marketing.css';
-import SceneImage from '@/components/SceneImage';
 
 export const metadata = {
   title: 'Free Marketing Strategy Meeting',
@@ -74,12 +73,6 @@ export default function MarketingPage() {
               <p className="mk-hero-note">
                 Built on the experience of serving 15,000+ physicians across the US and Canada.
               </p>
-              <div className="img-frame mk-hero-img">
-                <SceneImage
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=70"
-                  alt="Strategy meeting between practice partners"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -88,7 +81,7 @@ export default function MarketingPage() {
       {/* What we analyze */}
       <section>
         <div className="wrap">
-          <div className="sec-head reveal">
+          <div className="sec-head center reveal">
             <span className="eyebrow">What we analyze</span>
             <h2>A complete picture of your digital presence</h2>
             <p>
@@ -96,7 +89,7 @@ export default function MarketingPage() {
               would. In the session, we walk you through what we found.
             </p>
           </div>
-          <div className="card-grid cols-2">
+          <div className="mk-tiles">
             <article className="mk-card reveal">
               <div className="ic">
                 <svg viewBox="0 0 24 24">
@@ -158,25 +151,25 @@ export default function MarketingPage() {
             <span className="eyebrow">How it works</span>
             <h2>Three steps, about an hour of your time</h2>
           </div>
-          <div className="card-grid">
-            <article className="mk-card mk-step reveal">
-              <span className="num">Step 01</span>
+          <div className="mk-steps">
+            <article className="mk-step reveal">
+              <span className="num">1</span>
               <h3>Book your session</h3>
               <p>
                 Pick a time that works for you. We&apos;ll confirm by email and ask a few quick
                 questions about your practice and goals.
               </p>
             </article>
-            <article className="mk-card mk-step reveal">
-              <span className="num">Step 02</span>
+            <article className="mk-step reveal">
+              <span className="num">2</span>
               <h3>We do the research</h3>
               <p>
                 Before we meet, our team audits your rankings, website, and local competition, the
                 same analysis we run for our own clients.
               </p>
             </article>
-            <article className="mk-card mk-step reveal">
-              <span className="num">Step 03</span>
+            <article className="mk-step reveal">
+              <span className="num">3</span>
               <h3>Walk through the findings</h3>
               <p>
                 In a one-on-one meeting, we show you what we found and leave you with a prioritized,

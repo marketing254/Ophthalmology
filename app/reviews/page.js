@@ -8,7 +8,7 @@ export default function ReviewsPage() {
         <span className="orb orb-teal" style={{ width: 320, height: 320, top: -120, right: '-2%' }} aria-hidden="true" />
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
           <div className="rv2-lead">
-            <span className="eyebrow" style={{ color: '#A8C8FF' }}>Reviews</span>
+            <span className="eyebrow" style={{ color: '#B7CCDE' }}>Reviews</span>
             <h1>What listeners &amp; members say.</h1>
             <p>Real words from the ophthalmologists and teams who tune in and take part.</p>
           </div>

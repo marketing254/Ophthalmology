@@ -8,7 +8,7 @@ export default function WebinarReplaysPage() {
         <span className="orb orb-teal" style={{ width: 300, height: 300, top: -110, right: '0%' }} aria-hidden="true" />
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
           <Link className="rp-back" href="/webinars">← Upcoming webinars</Link>
-          <span className="eyebrow" style={{ color: '#A8C8FF' }}>On-Demand Library</span>
+          <span className="eyebrow" style={{ color: '#B7CCDE' }}>On-Demand Library</span>
           <h1>Webinar replays</h1>
           <p>Full-length sessions from leading ophthalmic practices, free, on your schedule.</p>
         </div>

@@ -1,21 +1,21 @@
 /* ===== Podcast — "studio" identity ===== */
-.pod-hero{background:radial-gradient(120% 140% at 85% 0%, #132250 0%, var(--navy) 55%);color:#fff;padding:70px 0 76px;overflow:hidden}
+.pod-hero{background:radial-gradient(120% 140% at 85% 0%, #313F4C 0%, var(--navy) 55%);color:#fff;padding:70px 0 76px;overflow:hidden}
 .pod-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.pod-onair{display:inline-flex;align-items:center;gap:9px;font:600 11.5px var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#A8C8FF;margin-bottom:18px}
+.pod-onair{display:inline-flex;align-items:center;gap:9px;font:600 11.5px var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#B7CCDE;margin-bottom:18px}
 .pod-dot{width:9px;height:9px;border-radius:50%;background:#ff5f52;box-shadow:0 0 0 0 rgba(255,95,82,.6);animation:pod-pulse 1.8s infinite}
 @keyframes pod-pulse{0%{box-shadow:0 0 0 0 rgba(255,95,82,.55)}70%{box-shadow:0 0 0 10px rgba(255,95,82,0)}100%{box-shadow:0 0 0 0 rgba(255,95,82,0)}}
 .pod-hero-copy h1{color:#fff;font-size:clamp(30px,4vw,50px);font-weight:600;line-height:1.12;margin-bottom:18px;max-width:560px}
-.pod-hero-copy p{color:#C9D9F5;font-size:17px;line-height:1.7;max-width:500px;margin-bottom:24px}
+.pod-hero-copy p{color:#D5DEE6;font-size:17px;line-height:1.7;max-width:500px;margin-bottom:24px}
 .pod-eq{display:flex;align-items:flex-end;gap:5px;height:34px;margin-bottom:26px}
-.pod-eq span{width:5px;height:100%;border-radius:3px;background:linear-gradient(180deg,#7FB1FF,#2E6FB0);transform-origin:bottom;animation:pod-eq 1.1s ease-in-out infinite}
+.pod-eq span{width:5px;height:100%;border-radius:3px;background:linear-gradient(180deg,#9DBBD4,#2E6FB0);transform-origin:bottom;animation:pod-eq 1.1s ease-in-out infinite}
 @keyframes pod-eq{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
 .pod-stats{display:flex;gap:34px;flex-wrap:wrap}
 .pod-stats b{display:block;font:600 26px var(--font-display);color:#fff}
-.pod-stats span{font-size:12.5px;color:#93A9CE;letter-spacing:.04em;text-transform:uppercase}
+.pod-stats span{font-size:12.5px;color:#93A5B3;letter-spacing:.04em;text-transform:uppercase}
 
 /* 3D featured card */
 .pod-feature{background:#fff;color:var(--ink);border-radius:14px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.35);will-change:transform}
-.pod-feature-art{position:relative;aspect-ratio:16/9;background:#0A1633;overflow:hidden}
+.pod-feature-art{position:relative;aspect-ratio:16/9;background:#2A3742;overflow:hidden}
 .pod-feature-art img,.pod-feature-art [data-fallback]{width:100%;height:100%;object-fit:cover;font-size:44px}
 .pod-feature-badge{position:absolute;top:14px;left:14px;background:var(--navy);color:#fff;font:600 12px var(--font-body);letter-spacing:.04em;padding:5px 12px;border-radius:6px}
 .pod-feature-body{padding:22px 24px 24px}
@@ -36,7 +36,7 @@
 .pod-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .pod-row{display:grid;grid-template-columns:132px 1fr auto;gap:22px;align-items:center;padding:18px 12px;border-bottom:1px solid var(--line);transition:background .15s}
 .pod-row:hover{background:#fff}
-.pod-row-art{position:relative;width:132px;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#0A1633}
+.pod-row-art{position:relative;width:132px;aspect-ratio:16/9;border-radius:8px;overflow:hidden;background:#2A3742}
 .pod-row-art img,.pod-row-art [data-fallback]{width:100%;height:100%;object-fit:cover;font-size:22px}
 .pod-row-play{position:absolute;inset:0;margin:auto;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
 .pod-row:hover .pod-row-play{opacity:1}

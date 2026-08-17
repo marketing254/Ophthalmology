@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import './home.css';
 import NewsletterForm from '@/components/NewsletterForm';
-import HomeHeroCard from './HomeHeroCard';
 import HomeEpisodes from './HomeEpisodes';
-import HomeHosts from './HomeHosts';
+import LetterReveal from '@/components/LetterReveal';
 
 const FEATURES = [
   {
@@ -28,12 +27,19 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="hx">
-        <div className="wrap hx-grid">
-          <div className="reveal">
+        <div className="hx-gyro" aria-hidden="true">
+          <span className="gy gy-1" />
+          <span className="gy gy-2" />
+          <span className="gy gy-3" />
+        </div>
+        <div className="wrap hx-center">
+          <div className="hx-copy">
             <span className="hx-kicker">For practice owners, surgeons &amp; administrators</span>
             <h1>
-              The business education ophthalmologists{' '}
-              <span className="hx-accent">never got in residency.</span>
+              <LetterReveal text="The business education ophthalmologists" />{' '}
+              <span className="hx-accent">
+                <LetterReveal text="never got in residency." delay={950} />
+              </span>
             </h1>
             <p className="hx-lead">
               Live expert panels, a podcast, and practical playbooks on growing an eye-care practice,
@@ -50,16 +56,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="hx-card float-slow">
-            <HomeHeroCard />
-          </div>
         </div>
       </section>
 
       {/* Features */}
       <section className="feats">
         <div className="wrap">
-          <div className="sec-head reveal">
+          <div className="sec-head center reveal">
             <span className="eyebrow">What you get</span>
             <h2>Three ways to sharpen the business side of your practice</h2>
             <p>Everything is built for the people running eye-care practices, not generic business advice.</p>
@@ -89,7 +92,6 @@ export default function HomePage() {
 
       {/* Dynamic sections, pulled live from the Google Sheet */}
       <HomeEpisodes />
-      <HomeHosts />
 
       {/* Newsletter CTA */}
       <section className="cta-band">

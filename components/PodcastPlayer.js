@@ -95,7 +95,7 @@ export default function PodcastPlayer({ src, title, episode, art, guest }) {
           style={{ '--pp': `${pct / 10}%` }}
           aria-label="Seek"
         />
-        <span className="pp-time">{ready ? fmt(dur) : '—:—'}</span>
+        <span className="pp-time">{ready ? fmt(dur) : '0:00'}</span>
       </div>
 
       <div className="pp-controls">

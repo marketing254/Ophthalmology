@@ -14,7 +14,7 @@ export default function HomeEpisodes() {
   return (
     <section className="episodes" id="episodes">
       <div className="wrap">
-        <div className="sec-head reveal">
+        <div className="sec-head center reveal">
           <span className="eyebrow">The Ophthalmology Business Podcast</span>
           <h2>Latest from the show</h2>
           <p>New conversations on the business of eye care, pulled live from our library.</p>

@@ -4,9 +4,9 @@
 .rv2-score{text-align:center;padding-right:56px;border-right:1px solid rgba(255,255,255,.16)}
 .rv2-num{font:600 84px var(--font-display);line-height:.9;color:#fff}
 .rv2-stars{color:#E8A93A;font-size:22px;letter-spacing:3px;margin:10px 0 6px}
-.rv2-count{font-size:13px;color:#93A9CE;letter-spacing:.05em;text-transform:uppercase}
+.rv2-count{font-size:13px;color:#93A5B3;letter-spacing:.05em;text-transform:uppercase}
 .rv2-lead h1{color:#fff;font-size:clamp(28px,3.6vw,46px);font-weight:600;line-height:1.14;margin:6px 0 14px;max-width:520px}
-.rv2-lead p{color:#C9D9F5;font-size:17px;line-height:1.7;max-width:480px}
+.rv2-lead p{color:#D5DEE6;font-size:17px;line-height:1.7;max-width:480px}
 
 .rv2-body{padding:64px 0 84px}
 .rv2-wall{columns:3;column-gap:24px}
