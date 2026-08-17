@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import TeamPhoto from '@/components/TeamPhoto';
 import './about.css';
 
 export const metadata = {
@@ -7,7 +8,7 @@ export const metadata = {
     'Why Ophthalmology Business Academy exists: actionable business education for ophthalmologists, founded by Naren Arulrajah with key opinion leaders across eye care.',
 };
 
-const IMG = 'https://www.obacademy.org/wp-content/uploads';
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const TIMELINE = [
   {
@@ -34,19 +35,22 @@ const TIMELINE = [
 
 const TEAM = [
   {
-    img: `${IMG}/2022/08/mth-naren-150x1501-1.jpg`,
+    img: `${BASE}/team/naren.jpg`,
+    initials: 'NA',
     name: 'Naren Arulrajah',
     role: 'Founder & Host',
     bio: 'CEO of Ekwa Marketing. Has personally consulted with ophthalmology practices across the US, helping them scale from startups to multi-million-dollar organizations. AceTech Ontario Leadership Initiative Award recipient.',
   },
   {
-    img: `${IMG}/2022/09/Guido-Piquet-150x150.jpg`,
+    img: `${BASE}/team/guido-piquet.jpg`,
+    initials: 'GP',
     name: 'Guido Piquet',
     role: 'Co-host',
     bio: 'Chief Operations Officer at Mann Eye Institute (Houston & Austin). Certified Ophthalmic Executive and MBA. Under his operational leadership the practice has more than doubled in size.',
   },
   {
-    img: `${IMG}/2022/10/Sarah-Duval-150x150.jpg`,
+    img: `${BASE}/team/sarah-duval.jpg`,
+    initials: 'SD',
     name: 'Sarah Duval, COE, COA',
     role: 'Co-host',
     bio: 'Director of Marketing & Business Development at Concord Eye Center and past president of the National Board for the Certification of Ophthalmic Executives. Twenty-plus years in ophthalmology, from technician to leadership.',
@@ -122,7 +126,7 @@ export default function AboutPage() {
         <div className="wrap reveal">
           <div className="card">
             <div className="ph">
-              <img src={`${IMG}/2022/08/mth-naren-150x1501-1.jpg`} alt="Naren Arulrajah" loading="lazy" />
+              <TeamPhoto src={`${BASE}/team/naren.jpg`} alt="Naren Arulrajah" initials="NA" />
             </div>
             <blockquote>
               Success is a by-product of our dedication to <span>serving others.</span> The academy
@@ -229,7 +233,7 @@ export default function AboutPage() {
             {TEAM.map((m) => (
               <article className="member reveal" key={m.name}>
                 <div className="ph">
-                  <img src={m.img} alt={m.name} loading="lazy" />
+                  <TeamPhoto src={m.img} alt={m.name} initials={m.initials} />
                 </div>
                 <h3>{m.name}</h3>
                 <span className="role">{m.role}</span>
