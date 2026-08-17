@@ -23,6 +23,7 @@ export default function SmartImage({ src, alt, fallback, className, style, ...re
       src={src}
       alt={alt || ''}
       loading="lazy"
+      referrerPolicy="no-referrer"
       className={className}
       style={style}
       onError={() => setFailed(true)}

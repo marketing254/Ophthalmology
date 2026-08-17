@@ -31,18 +31,6 @@ export default function Marquee() {
       </Link>
     );
   }
-  if (upcoming) {
-    const when = [upcoming.monthYear, upcoming.time].filter(Boolean).join(' · ');
-    items.push(
-      <Link className="mq-item" href="/webinars" key="web">
-        <span className="mq-tag">Latest Event</span>
-        <span className="mq-text">
-          {upcoming.title}
-          {when ? `, ${when}` : ''}
-        </span>
-      </Link>
-    );
-  }
 
   if (items.length === 0) {
     // Graceful fallback before data loads / when empty.

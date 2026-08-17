@@ -2,10 +2,8 @@ import Link from 'next/link';
 import './home.css';
 import NewsletterForm from '@/components/NewsletterForm';
 import HomeHeroCard from './HomeHeroCard';
-import HomeSchedule from './HomeSchedule';
 import HomeEpisodes from './HomeEpisodes';
 import HomeHosts from './HomeHosts';
-import HomeReviews from './HomeReviews';
 
 const FEATURES = [
   {
@@ -90,10 +88,8 @@ export default function HomePage() {
       </div>
 
       {/* Dynamic sections, pulled live from the Google Sheet */}
-      <HomeSchedule />
       <HomeEpisodes />
       <HomeHosts />
-      <HomeReviews />
 
       {/* Newsletter CTA */}
       <section className="cta-band">

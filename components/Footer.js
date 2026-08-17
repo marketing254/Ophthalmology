@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import BrandIcon from './BrandIcon';
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Footer() {
   return (
     <footer className="site">
@@ -8,11 +10,7 @@ export default function Footer() {
         <div className="f-grid">
           <div className="f-brand">
             <Link className="logo" href="/">
-              <span className="logo-mark" aria-hidden="true" />
-              <span>
-                OB&nbsp;Academy
-                <small>Ophthalmology Business</small>
-              </span>
+              <img src={`${BASE}/logo.svg`} alt="Ophthalmology Business Academy" width="185" height="52" />
             </Link>
             <p>
               The business education platform for ophthalmology practice owners, surgeons,
@@ -36,7 +34,6 @@ export default function Footer() {
           <div className="f-col">
             <h4>Academy</h4>
             <Link href="/about">About OB Academy</Link>
-            <Link href="/speakers">Speakers &amp; partners</Link>
             <Link href="/reviews">Reviews</Link>
             <Link href="/marketing">Marketing strategy meeting</Link>
           </div>

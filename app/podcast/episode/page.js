@@ -154,7 +154,6 @@ function EpisodeContent() {
             <aside className="pe-side">
               {(ep.guestName || ep.guestPhoto) && !ep.isPanel && (
                 <div className="pe-guest">
-                  <div className="ph"><SmartImage src={ep.guestPhoto} alt={ep.guestName} fallback={ep.guestName} /></div>
                   <div className="pe-guest-k">Guest</div>
                   <h3>{ep.guestName}</h3>
                 </div>

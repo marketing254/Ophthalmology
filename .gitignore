@@ -25,3 +25,7 @@ Thumbs.db
 *.pem
 .idea/
 .vscode/
+
+# Local deliverables & working docs (keep out of the repo)
+*.pdf
+*.xlsx

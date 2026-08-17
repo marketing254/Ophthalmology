@@ -15,6 +15,7 @@ export default function SceneImage({ src, alt = '', className, style, fallback =
       src={cur}
       alt={alt}
       loading="lazy"
+      referrerPolicy="no-referrer"
       className={className}
       style={style}
       onError={() => { if (cur !== fallback) setCur(fallback); }}

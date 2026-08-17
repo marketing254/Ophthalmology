@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Marquee from './Marquee';
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 // Ordered to mirror the reference site's information architecture.
 const NAV = [
   { href: '/about', label: 'About Us' },
@@ -17,7 +19,6 @@ const NAV = [
     ],
   },
   { href: '/podcast', label: 'Podcast' },
-  { href: '/speakers', label: 'Speakers' },
   { href: '/reviews', label: 'Reviews' },
   {
     href: '/resources',
@@ -62,11 +63,7 @@ export default function Header() {
       <header className={`site${scrolled ? ' scrolled' : ''}`}>
         <div className="wrap">
           <Link className="logo" href="/" aria-label="Ophthalmology Business Academy home">
-            <span className="logo-mark" aria-hidden="true" />
-            <span>
-              OB&nbsp;Academy
-              <small>Ophthalmology Business</small>
-            </span>
+            <img src={`${BASE}/logo-nav.svg`} alt="Ophthalmology Business Academy" width="185" height="52" />
           </Link>
 
           <nav className="main" aria-label="Primary">

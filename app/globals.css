@@ -120,7 +120,8 @@ section{padding:84px 0}
 header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.62);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border-bottom:1px solid rgba(10,22,51,.07);transition:background .25s,box-shadow .25s,border-color .25s}
 header.site.scrolled{background:rgba(255,255,255,.82);border-bottom-color:rgba(10,22,51,.1);box-shadow:0 8px 30px rgba(10,22,51,.06)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:var(--header-h)}
-.logo{display:flex;align-items:center;gap:11px;font:600 19px var(--font-display);color:var(--navy);flex-shrink:0}
+.logo{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.logo img{height:50px;width:auto;display:block}
 .logo small{display:block;font:600 10px/1 var(--font-body);letter-spacing:.18em;text-transform:uppercase;color:var(--slate)}
 .logo-mark{
   width:38px;height:38px;border-radius:9px;background:var(--navy);flex-shrink:0;

@@ -25,7 +25,7 @@ export default function HomeHosts() {
           ))}
         </div>
         <div className="reveal" style={{ textAlign: 'center', marginTop: 34 }}>
-          <Link className="btn btn-light" href="/speakers">Meet all speakers &amp; partners</Link>
+          <Link className="btn btn-light" href="/guest-speaker">Apply to speak</Link>
         </div>
       </div>
     </section>
