@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://marketing254.github.io/Ophthalmology/sitemap.xml
+Sitemap: https://www.obacademy.org/sitemap.xml

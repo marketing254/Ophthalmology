@@ -1,4 +1,4 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://marketing254.github.io/Ophthalmology';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.obacademy.org';
 
 export const metadata = {
   title: 'The Ophthalmology Business Podcast',
