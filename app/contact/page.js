@@ -6,7 +6,14 @@ import './contact.css';
 export const metadata = {
   title: 'Contact',
   description:
-    'Get in touch with the Ophthalmology Business Academy team, questions about the podcast, live panels, membership, or applying to be a guest.',
+    'Get in touch with the Ophthalmology Business Academy team about the podcast, live panels, membership, or applying to be a guest.',
+  alternates: { canonical: '/contact/' },
+  openGraph: {
+    url: '/contact/',
+    title: 'Contact OB Academy',
+    description: 'Questions about the podcast, live panels, or membership? Talk to the team.',
+    images: [{ url: '/og/contact.png', width: 1200, height: 630, alt: 'Contact OB Academy' }],
+  },
 };
 
 export default function ContactPage() {

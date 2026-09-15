@@ -14,3 +14,6 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.obacademy.org/sitemap.xml
+
+# Machine-readable index for AI systems
+# https://www.obacademy.org/llms.txt

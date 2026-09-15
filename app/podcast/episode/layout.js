@@ -3,6 +3,7 @@ export const metadata = {
   description:
     'Listen to this episode of the Ophthalmology Business Podcast: practical conversations on growing an eye-care practice, with full transcript and key notes.',
   alternates: { canonical: '/podcast/episode/' },
+  robots: { index: false, follow: true },
 };
 
 export default function Layout({ children }) {

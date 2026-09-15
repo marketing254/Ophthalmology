@@ -1,27 +1,38 @@
 /* ===== Webinars — "programme" identity (light, date-led) ===== */
 .wb-hero{position:relative;overflow:hidden;background:#fff;border-bottom:1px solid var(--line);padding:60px 0 66px}
 .wb-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-.wb-hero-copy h1{font-size:clamp(30px,4vw,50px);font-weight:600;line-height:1.12;margin:6px 0 18px;max-width:520px}
+.wb-hero-copy h1{font-size:clamp(30px,4vw,50px);font-weight:300;line-height:1.12;margin:6px 0 18px;max-width:520px}
 .wb-hero-copy p{color:var(--slate);font-size:17px;line-height:1.7;max-width:480px;margin-bottom:26px}
 .wb-hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 
 /* Next-session 3D card */
-.wb-next{position:relative;background:var(--navy);color:#fff;border-radius:14px;padding:28px;box-shadow:var(--shadow-lg);will-change:transform}
-.wb-next-flag{font:600 11px var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#B7CCDE}
+.wb-next{position:relative;background:var(--g-hero);color:#fff;border-radius:14px;padding:28px;box-shadow:var(--shadow-lg);will-change:transform;overflow:hidden}
+.wb-next-banner{margin:-28px -28px 20px;aspect-ratio:16/9;overflow:hidden;background:#22323D}
+.wb-next-banner img,.wb-next-banner [data-fallback]{width:100%;height:100%;object-fit:cover}
+.wb-next-flag{font:600 11px var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:#C4D1D8}
 .wb-next-date{display:flex;align-items:baseline;gap:12px;margin:12px 0 14px}
 .wb-next-day{font:600 60px var(--font-display);line-height:.9;color:#fff}
-.wb-next-mo{font:600 15px var(--font-body);color:#D5DEE6;letter-spacing:.04em;text-transform:uppercase}
+.wb-next-mo{font:600 15px var(--font-body);color:#C9D3D9;letter-spacing:.04em;text-transform:uppercase}
 .wb-next h3{color:#fff;font-size:20px;font-weight:600;line-height:1.3;margin-bottom:12px}
-.wb-next-time{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#D5DEE6;margin-bottom:20px}
-.wb-next-time svg{width:16px;height:16px;fill:none;stroke:#B7CCDE;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.wb-next-time{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#C9D3D9;margin-bottom:20px}
+.wb-next-time svg{width:16px;height:16px;fill:none;stroke:#C4D1D8;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .wb-next .btn-primary{width:100%;background:#fff;color:var(--navy);border-color:#fff}
 .wb-next .btn-primary:hover{background:var(--mist)}
 
 /* Agenda */
 .wb-agenda{padding:66px 0 76px}
-.wb-agenda-title{font-size:26px;font-weight:600;margin-bottom:10px}
+.wb-agenda-title{font-size:26px;font-weight:400;margin-bottom:10px}
+.wb-past-title{margin-top:64px}
+.wb-past .wb-item{opacity:.72}
+.wb-past .wb-item:hover{opacity:1}
+.wb-ended{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:999px;background:var(--canvas-subtle);border:1px solid var(--line);font:500 12px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-400)}
+.wb-next-sub{font-size:13.5px;color:#A4B3BC;line-height:1.5;margin:-6px 0 12px}
 .wb-list{list-style:none;margin:0;padding:0;border-top:2px solid var(--navy)}
 .wb-item{display:grid;grid-template-columns:96px 1fr auto;gap:28px;align-items:center;padding:26px 8px;border-bottom:1px solid var(--line);transition:background .15s}
+.wb-item.has-banner{grid-template-columns:96px 200px 1fr auto}
+.wb-item-banner{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--ink-900);border:1px solid var(--line)}
+.wb-item-banner img,.wb-item-banner [data-fallback]{width:100%;height:100%;object-fit:cover}
+@media(max-width:900px){.wb-item.has-banner{grid-template-columns:96px 1fr auto}.wb-item-banner{display:none}}
 .wb-item:hover{background:#fff}
 .wb-item-date{text-align:center;border-right:1px solid var(--line);padding-right:8px}
 .wb-d{display:block;font:600 40px var(--font-display);color:var(--navy);line-height:1}
@@ -36,7 +47,7 @@
 .wb-replays-strip{background:var(--navy);color:#fff}
 .wb-replays-strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:40px 32px}
 .wb-replays-strip h2{color:#fff;font-size:24px;font-weight:600;margin-bottom:4px}
-.wb-replays-strip p{color:#AEBFCC;font-size:14.5px}
+.wb-replays-strip p{color:#A4B3BC;font-size:14.5px}
 
 @media(max-width:900px){
   .wb-hero-grid{grid-template-columns:1fr;gap:32px}
@@ -49,10 +60,10 @@
 
 /* ===== Replays — "film library" (dark header, wide cards) ===== */
 .rp-hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;padding:52px 0 44px}
-.rp-back{display:inline-block;font-size:13.5px;color:#93A5B3;margin-bottom:22px}
+.rp-back{display:inline-block;font-size:13.5px;color:#8DA0AB;margin-bottom:22px}
 .rp-back:hover{color:#fff}
-.rp-hero h1{color:#fff;font-size:clamp(28px,3.6vw,44px);font-weight:600;margin:6px 0 12px}
-.rp-hero p{color:#D5DEE6;font-size:16.5px;max-width:520px}
+.rp-hero h1{color:#fff;font-size:clamp(28px,3.6vw,44px);font-weight:300;margin:6px 0 12px}
+.rp-hero p{color:#C9D3D9;font-size:16.5px;max-width:520px}
 .rp-body{padding:40px 0 84px}
 .rp-filter{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:30px}
 .rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -63,7 +74,7 @@
 .rp-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 60%,rgba(0,0,0,.06))}
 .rp-play{position:absolute;inset:0;margin:auto;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.3)}
 .rp-play svg{width:20px;height:20px;color:var(--navy)}
-.rp-dur{position:absolute;bottom:10px;right:10px;background:rgba(42,55,66,.85);color:#fff;font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:5px}
+.rp-dur{position:absolute;bottom:10px;right:10px;background:rgba(22,35,44,.85);color:#fff;font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:5px}
 .rp-info{padding:20px 22px;display:flex;flex-direction:column}
 .rp-meta{font-size:12px;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:8px}
 .rp-info h3{font-size:18px;font-weight:600;line-height:1.32;margin-bottom:8px}

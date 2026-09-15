@@ -54,7 +54,8 @@ export async function loadTab(key) {
       /* try next name */
     }
   }
-  _cache.set(key, { at: Date.now(), rows: [] });
+  // Failure: return empty WITHOUT caching it, so the next call retries
+  // instead of pinning an empty result for the TTL window.
   return [];
 }
 

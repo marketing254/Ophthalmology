@@ -3,12 +3,55 @@ import './marketing.css';
 export const metadata = {
   title: 'Free Marketing Strategy Meeting',
   description:
-    "Book a free Marketing Strategy Meeting: a one-on-one analysis of your practice's digital marketing, Google rankings, website conversion, and patient acquisition, with no obligation.",
+    'Book a free strategy meeting: a one-on-one analysis of your practice marketing, Google rankings, website conversion, and patient acquisition.',
+  alternates: { canonical: '/marketing/' },
+  openGraph: {
+    url: '/marketing/',
+    title: 'Free Marketing Strategy Meeting',
+    description: 'A one-on-one analysis of your practice marketing, rankings, and patient acquisition. Free, no obligation.',
+    images: [{ url: '/og/marketing.png', width: 1200, height: 630, alt: 'Free Marketing Strategy Meeting' }],
+  },
+};
+
+
+const MK_FAQ_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: "Is this really free? What's the catch?",
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, completely free, and the written action plan is yours to keep regardless of what you decide. Some practices that take the meeting choose to work with Ekwa afterward; there is no pressure either way.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is this a sales call?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. The session is spent walking through your specific data: rankings, website performance, and competitor activity. If you want to hear about working together at the end, ask. Otherwise there is no pitch.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How long does it take?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Plan for about an hour. The research happens before the meeting, so your time is spent entirely on the findings and what to do about them.',
+      },
+    },
+  ],
 };
 
 export default function MarketingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(MK_FAQ_LD) }}
+      />
       {/* Booking-first hero, the calendar leads */}
       <section className="mk-hero" id="book">
         <div className="wrap">
@@ -22,6 +65,8 @@ export default function MarketingPage() {
                 <p className="sub">Choose a slot below, most practices meet within the week.</p>
               </div>
               <div className="mk-book-body">
+                <link rel="preconnect" href="https://ekwasales-withoutceo.youcanbook.me" />
+                <link rel="dns-prefetch" href="https://ekwasales-withoutceo.youcanbook.me" />
                 <iframe
                   src="https://ekwasales-withoutceo.youcanbook.me/?noframe=true&skipHeaderFooter=true"
                   title="Schedule your free strategy meeting"
@@ -71,7 +116,8 @@ export default function MarketingPage() {
                 </a>
               </div>
               <p className="mk-hero-note">
-                Built on the experience of serving 15,000+ physicians across the US and Canada.
+                A free service provided by Ekwa Marketing, the team behind OB Academy, built on
+                the experience of serving 15,000+ physicians across the US and Canada.
               </p>
             </div>
           </div>

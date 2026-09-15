@@ -1,4 +1,4 @@
-import { Outfit, DM_Sans } from 'next/font/google';
+import { Inter, IBM_Plex_Mono } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import './dynamic.css';
@@ -7,18 +7,25 @@ import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 import CardTilt from '@/components/CardTilt';
 
-// Fresh type system: Outfit for headings, DM Sans for body/UI.
-const display = Outfit({
+// OBA design system type: Inter for everything, IBM Plex Mono for eyebrow labels.
+const display = Inter({
   subsets: ['latin'],
-  weight: ['500', '600', '700', '800'],
+  weight: ['300', '400', '500', '600'],
   variable: '--font-display',
   display: 'swap',
 });
 
-const body = DM_Sans({
+const body = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['300', '400', '500', '600'],
   variable: '--font-body',
+  display: 'swap',
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-mono',
   display: 'swap',
 });
 
@@ -32,8 +39,7 @@ export const metadata = {
     template: '%s | Ophthalmology Business Academy',
   },
   description:
-    'Live expert panels, a 75-episode podcast, and practical playbooks on the business of ophthalmology. Free membership for practice owners, surgeons, administrators, and COEs.',
-  alternates: { canonical: '/' },
+    'Live expert panels, a 75-episode podcast, and practical playbooks on the business of ophthalmology. Free for practice owners, surgeons, and administrators.',
   icons: { icon: `${BASE}/favicon.svg` },
   openGraph: {
     type: 'website',
@@ -81,7 +87,17 @@ const JSON_LD = [
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+      <head>
+        {/* The sheet (data) and Drive (episode art) are on the critical path
+            for every dynamic section: warm the connections early. */}
+        <link rel="preconnect" href="https://docs.google.com" />
+        <link rel="preconnect" href="https://drive.google.com" />
+        <link rel="preconnect" href="https://lh3.googleusercontent.com" />
+        <link rel="dns-prefetch" href="https://traffic.libsyn.com" />
+        <link rel="preconnect" href="https://script.google.com" />
+        <link rel="preconnect" href="https://script.googleusercontent.com" />
+      </head>
       <body>
         <script
           type="application/ld+json"

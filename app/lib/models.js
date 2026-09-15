@@ -85,6 +85,15 @@ export function normalizeEvent(row, i = 0) {
       .split(/[\n|]/).map((s) => s.trim()).filter(Boolean),
     registerUrl: pick(row, ['register_url', 'register', 'url']),
     category: pick(row, ['category', 'type']),
+    banner: driveImg(pick(row, ['banner_image', 'banner', 'image']), 'w1200'),
+    // "Name: driveURL" pairs, one per line
+    panelistPhotos: (pick(row, ['image_urls', 'panelist_photos']) || '')
+      .split(/\n+/)
+      .map((l) => {
+        const m = l.match(/^(.+?):\s*(https?:\/\/\S+)/);
+        return m ? { name: m[1].trim(), photo: driveImg(m[2].trim(), 'w400') } : null;
+      })
+      .filter(Boolean),
   };
 }
 

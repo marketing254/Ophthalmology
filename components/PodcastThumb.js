@@ -28,6 +28,7 @@ export default function PodcastThumb({ src, episode, title, guest, compact = fal
         src={urls[attempt]}
         alt={title || (episode ? `Episode ${episode}` : 'Podcast episode')}
         loading="lazy"
+        decoding="async"
         referrerPolicy="no-referrer"
         onError={() => setAttempt(attempt + 1)}
       />

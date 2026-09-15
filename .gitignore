@@ -29,3 +29,16 @@ Thumbs.db
 # Local deliverables & working docs (keep out of the repo)
 *.pdf
 *.xlsx
+
+# Build-time sheet snapshot (regenerated every build)
+.sheet-cache.json
+
+# UI draft from the product owner's repo (reference only, never commit)
+/oba-website-main/
+
+# SEO skill reference files (local tooling, not site code)
+/skills/
+
+# Raw asset drops at the root (served copies live in /public)
+/*.webp
+

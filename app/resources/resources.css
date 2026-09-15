@@ -1,33 +1,43 @@
-/* Resources — library index look */
-.lib-head{background:#fff;border-bottom:1px solid var(--line);padding:56px 0 40px}
-.lib-head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap}
-.lib-head h1{font-size:clamp(30px,4vw,46px);font-weight:600;margin:12px 0 12px}
-.lib-head p{color:var(--slate);font-size:16.5px;max-width:520px}
-.lib-search{display:flex;align-items:center;gap:10px;background:var(--mist);border:1px solid var(--line);border-radius:8px;padding:11px 15px;min-width:280px;flex:0 1 340px}
-.lib-search:focus-within{border-color:var(--navy);background:#fff}
-.lib-search svg{width:18px;height:18px;fill:none;stroke:var(--slate);stroke-width:1.8;stroke-linecap:round;flex:none}
-.lib-search input{border:0;background:none;outline:none;font:500 15px var(--font-body);color:var(--ink);width:100%}
+/* Resources: library index in the design system (hairline rows, mono labels) */
 
-.lib-body{padding:8px 0 84px}
-.lib-tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line);margin:36px 0 8px}
-.lib-tab{position:relative;background:none;border:0;cursor:pointer;padding:12px 16px;font:500 14.5px var(--font-body);color:var(--slate);border-bottom:2px solid transparent;margin-bottom:-1px}
-.lib-tab:hover{color:var(--ink)}
-.lib-tab.active{color:var(--navy);font-weight:600;border-bottom-color:var(--navy)}
+/* Head band */
+.lib-head{background:var(--canvas);border-bottom:1px solid var(--line);padding:72px 0 48px}
+.lib-head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:36px;flex-wrap:wrap}
+.lib-head h1{font-size:clamp(30px,1.6rem + 2vw,46px);font-weight:300;letter-spacing:-.02em;line-height:1.1;margin:6px 0 12px}
+.lib-head p{color:var(--ink-500);font-size:16.5px;max-width:480px}
+.lib-search{position:relative;display:flex;align-items:center;min-width:300px;flex:0 1 340px}
+.lib-search svg{position:absolute;left:16px;width:17px;height:17px;fill:none;stroke:var(--ink-400);stroke-width:2;stroke-linecap:round}
+.lib-search input{width:100%;height:44px;padding:0 18px 0 44px;border:1px solid var(--line-strong);border-radius:999px;font:400 14.5px var(--font-body);color:var(--ink-900);background:#fff;transition:border-color .15s}
+.lib-search input::placeholder{color:var(--ink-400)}
+.lib-search input:focus{outline:none;border-color:var(--accent-500);box-shadow:0 0 0 3px rgba(85,112,128,.12)}
 
-.lib-list{list-style:none;margin:0;padding:0}
-.lib-row{display:grid;grid-template-columns:56px 1fr auto;gap:22px;align-items:center;padding:26px 12px;border-bottom:1px solid var(--line);transition:background .15s}
-.lib-row:hover{background:#fff}
-.lib-tag{width:56px;height:56px;border-radius:9px;background:var(--mist);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font:600 22px var(--font-display);color:var(--navy);text-transform:uppercase}
-.lib-cat{font:600 11px var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
-.lib-main h3{font-size:20px;font-weight:600;margin-bottom:6px;line-height:1.3}
-.lib-main p{font-size:14.5px;color:var(--slate);line-height:1.6;margin-bottom:8px;max-width:640px}
-.lib-meta{font-size:12.5px;color:var(--slate)}
-.lib-tags{color:var(--slate)}
-.lib-action .btn{padding:10px 20px;font-size:14px}
-.lib-soon{font-size:13px;color:var(--slate);font-style:italic;white-space:nowrap}
+/* Body */
+.lib-body{padding:44px 0 84px;background:var(--canvas)}
 
-@media(max-width:720px){
-  .lib-row{grid-template-columns:44px 1fr;gap:16px}
-  .lib-tag{width:44px;height:44px;font-size:18px}
+/* Category tabs: pill chips */
+.lib-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.lib-tab{height:38px;padding:0 18px;border-radius:999px;border:1px solid var(--line-strong);background:#fff;font:500 13.5px var(--font-body);color:var(--ink-600);cursor:pointer;transition:all .15s}
+.lib-tab:hover{border-color:var(--ink-300);color:var(--ink-900)}
+.lib-tab.active{background:var(--ink-900);border-color:var(--ink-900);color:#fff}
+
+/* Rows: hairline-ruled list */
+.lib-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.lib-row{display:grid;grid-template-columns:64px 1fr auto;gap:26px;align-items:center;padding:28px 8px;border-bottom:1px solid var(--line);transition:background .15s}
+.lib-row:hover{background:var(--canvas-subtle)}
+.lib-tag{width:52px;height:52px;border-radius:14px;background:var(--ink-900);color:var(--pale-accent);display:flex;align-items:center;justify-content:center;font:500 20px var(--font-mono)}
+.lib-cat{font:500 11.5px var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-600);margin-bottom:7px}
+.lib-main h3{font-size:19px;font-weight:400;line-height:1.32;margin-bottom:7px}
+.lib-main p{font-size:14.5px;color:var(--ink-500);line-height:1.62;max-width:640px;margin-bottom:9px}
+.lib-meta{font-size:12.5px;color:var(--ink-400)}
+.lib-tags{color:var(--ink-400)}
+.lib-action .btn-light{border:1px solid var(--line-strong)}
+.lib-action .btn-light:hover{border-color:var(--ink-300)}
+.lib-soon{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:999px;background:var(--canvas-subtle);border:1px solid var(--line);font:500 12px var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-400)}
+
+@media(max-width:760px){
+  .lib-head{padding:52px 0 36px}
+  .lib-head-row{align-items:stretch;flex-direction:column}
+  .lib-search{flex:1 1 auto;min-width:0}
+  .lib-row{grid-template-columns:52px 1fr;gap:16px}
   .lib-action{grid-column:2;justify-self:start}
 }

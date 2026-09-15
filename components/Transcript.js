@@ -22,6 +22,11 @@ const RE_NUMBERED = /^(Speaker\s+(\d+))\s{2,}(\d{1,2}:\d{2}(?::\d{2})?)\s{2,}(.+
 const RE_NAMED = /^([A-Za-z][A-Za-z .'\-]{0,58}[A-Za-z.])\s{2,}(\d{1,2}:\d{2}(?::\d{2})?)\s{2,}(.+)$/;
 // "[00:01:23] Speaker: text"  or  "[00:01:23] text"
 const RE_TIME_LEAD = /^\[(\d{1,2}:\d{2}(?::\d{2})?)\]\s+(.+)$/;
+// Parenthesised timestamp, optional speaker:  "(0:00:07) text"  /  "(0:00:32) Dr. Shez: text"
+const RE_PAREN = /^\((\d{1,2}:\d{2}(?::\d{2})?(?:\.\d+)?)\)\s*(?:([A-Z][A-Za-z .,'\-]{1,44}?):\s+)?(\S[\s\S]*)$/;
+// Bare speaker line: "Naren Arulrajah: text" — capitalised 1-4 word name only,
+// so ordinary sentences with colons don't match.
+const RE_BARE_SPK = /^((?:Dr\.\s+)?[A-Z][A-Za-z.'\-]+(?:\s+[A-Z][A-Za-z.'\-]+){0,3}):\s+(\S.*)$/;
 
 function escapeRegExp(s) {
   return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -66,7 +71,7 @@ function parseTranscript(raw, speakers = []) {
   // lines that sit before the first real speaker/timestamp line.
   const firstReal = lines.findIndex((l) => {
     const t = l.trim();
-    return t && (RE_VTT.test(t) || RE_NUMBERED.test(t) || RE_NAMED.test(t) || RE_TIME_LEAD.test(t));
+    return t && (RE_VTT.test(t) || RE_NUMBERED.test(t) || RE_NAMED.test(t) || RE_TIME_LEAD.test(t) || RE_PAREN.test(t));
   });
   if (firstReal > 0) lines = lines.slice(firstReal);
 
@@ -133,6 +138,29 @@ function parseTranscript(raw, speakers = []) {
       continue;
     }
 
+    // "(0:00:07) text" / "(0:00:32) Name: text"
+    m = t.match(RE_PAREN);
+    if (m) {
+      flush();
+      const name = (m[2] || '').trim();
+      entries.push({
+        speaker: name,
+        role: name ? roleOf(name) : '',
+        time: shortTime(m[1]),
+        text: m[3].trim(),
+      });
+      continue;
+    }
+
+    // "Naren Arulrajah: text" (no timestamp)
+    m = t.match(RE_BARE_SPK);
+    if (m) {
+      flush();
+      const name = m[1].trim();
+      entries.push({ speaker: name, role: roleOf(name), time: '', text: m[2].trim() });
+      continue;
+    }
+
     // Plain text, belongs to the open block turn, else floats on its own.
     if (current) current.parts.push(t);
     else entries.push({ speaker: '', role: '', time: '', text: t });
@@ -165,6 +193,19 @@ export default function Transcript({ transcriptUrl, speakers = [] }) {
   useEffect(() => {
     if (!configured || !fileId) return undefined;
     let alive = true;
+
+    // The Apps Script proxy has a slow cold start, so serve a cached copy
+    // instantly when this transcript was fetched before in this browser.
+    const cacheKey = `oba_ts_${fileId}`;
+    try {
+      const cached = sessionStorage.getItem(cacheKey);
+      if (cached && !looksBinary(cached)) {
+        setRaw(cached);
+        setStatus('ok');
+        return undefined;
+      }
+    } catch {}
+
     setStatus('loading');
     (async () => {
       try {
@@ -175,6 +216,9 @@ export default function Transcript({ transcriptUrl, speakers = [] }) {
         if (json && json.status === 'ok' && content.trim() && !looksBinary(content)) {
           setRaw(content);
           setStatus('ok');
+          try {
+            if (content.length < 1_500_000) sessionStorage.setItem(cacheKey, content);
+          } catch {}
         } else {
           setStatus('error');
         }

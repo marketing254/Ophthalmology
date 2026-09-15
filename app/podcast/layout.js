@@ -5,6 +5,12 @@ export const metadata = {
   description:
     'Stream 75+ free episodes on the business of eye care: practice marketing, operations, premium IOL conversion and leadership, with surgeons, COEs and practice executives.',
   alternates: { canonical: '/podcast/' },
+  openGraph: {
+    url: '/podcast/',
+    title: 'The Ophthalmology Business Podcast',
+    description: '75+ free episodes on the business of eye care, with surgeons, COEs, and practice executives.',
+    images: [{ url: '/og/podcast.png', width: 1200, height: 630, alt: 'The Ophthalmology Business Podcast' }],
+  },
 };
 
 const PODCAST_LD = {

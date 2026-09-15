@@ -67,9 +67,11 @@ export default function PodcastPlayer({ src, title, episode, art, guest }) {
       <audio ref={ref} src={src} preload="metadata" />
 
       <div className="pp-head">
-        <div className="pp-art">
-          <SmartImage src={art} alt={title} fallback={guest || 'OB'} />
-        </div>
+        {art && (
+          <div className="pp-art">
+            <SmartImage src={art} alt={title} fallback={guest || 'OB'} />
+          </div>
+        )}
         <div className="pp-meta">
           <span className="pp-kicker">▶ Now playing · Episode {episode}</span>
           <div className="pp-title">{title}</div>

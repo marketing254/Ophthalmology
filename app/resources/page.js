@@ -37,7 +37,11 @@ export default function ResourcesPage() {
           <div className="lib-head-row">
             <div>
               <span className="eyebrow">The Library</span>
-              <h1>Playbooks, guides &amp; checklists</h1>
+              <h1>
+                Playbooks, guides,
+                <br />
+                <span className="title-dim">and checklists.</span>
+              </h1>
               <p>Practical resources for growing your ophthalmology practice, new ones added regularly.</p>
             </div>
             <label className="lib-search">

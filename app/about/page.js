@@ -3,12 +3,83 @@ import TeamPhoto from '@/components/TeamPhoto';
 import './about.css';
 
 export const metadata = {
-  title: 'About',
+  title: 'About OB Academy',
   description:
-    'Why Ophthalmology Business Academy exists: actionable business education for ophthalmologists, founded by Naren Arulrajah with key opinion leaders across eye care.',
+    'Why Ophthalmology Business Academy exists: free business education for ophthalmologists, founded in 2022 by Naren Arulrajah with eye-care opinion leaders.',
+  alternates: { canonical: '/about/' },
+  openGraph: {
+    url: '/about/',
+    title: 'About Ophthalmology Business Academy',
+    description: 'Founded in 2022. 75+ podcast episodes, live expert panels, and free membership for eye-care practice leaders.',
+    images: [{ url: '/og/about.png', width: 1200, height: 630, alt: 'About OB Academy' }],
+  },
 };
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.obacademy.org';
+
+const FAQS = [
+  {
+    q: 'What is Ophthalmology Business Academy?',
+    a: 'The Ophthalmology Business Academy (OB Academy, or OBA) is a free business-education platform for ophthalmologists, practice owners, administrators, and certified ophthalmic executives. Founded in 2022, it publishes The Ophthalmology Business Podcast, hosts live expert panels, and shares practical practice-growth resources.',
+  },
+  {
+    q: 'Who hosts the Ophthalmology Business Podcast?',
+    a: 'The podcast is hosted by Naren Arulrajah (founder of OB Academy and CEO of Ekwa Marketing), Guido Piquet (Chief Operations Officer at Mann Eye Institute, COE, MBA), and Sarah Duval, COE, COA (Director of Marketing & Business Development at Concord Eye Center).',
+  },
+  {
+    q: 'How many episodes does the podcast have?',
+    a: 'The Ophthalmology Business Podcast has published more than 75 episodes since 2022, all free to stream, and holds a 5.0 rating on Apple Podcasts.',
+  },
+  {
+    q: 'How much does OB Academy membership cost?',
+    a: 'Membership is completely free. It includes live panel access, the full podcast library, and practical playbooks and resources.',
+  },
+];
+
+const ABOUT_LD = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/about/#naren-arulrajah`,
+    name: 'Naren Arulrajah',
+    jobTitle: 'Founder & Host',
+    worksFor: [
+      { '@id': `${SITE_URL}/#organization` },
+      { '@type': 'Organization', name: 'Ekwa Marketing', url: 'https://www.ekwa.com/' },
+    ],
+    sameAs: ['https://www.linkedin.com/company/ophthalmology-business-academy'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/about/#guido-piquet`,
+    name: 'Guido Piquet',
+    jobTitle: 'Co-host; Chief Operations Officer, Mann Eye Institute',
+    honorificSuffix: 'COE, MBA',
+    worksFor: { '@id': `${SITE_URL}/#organization` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${SITE_URL}/about/#sarah-duval`,
+    name: 'Sarah Duval',
+    jobTitle: 'Co-host; Director of Marketing & Business Development, Concord Eye Center',
+    honorificSuffix: 'COE, COA',
+    worksFor: { '@id': `${SITE_URL}/#organization` },
+  },
+];
+
 
 const TIMELINE = [
   {
@@ -60,6 +131,10 @@ const TEAM = [
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ABOUT_LD) }}
+      />
       {/* Dark slate hero, centered */}
       <section className="ab-hero">
         <div className="wrap reveal">
@@ -68,7 +143,7 @@ export default function AboutPage() {
             Great surgeons deserve <em>great businesses.</em>
           </h1>
           <p className="sub">
-            Ophthalmology Business Academy exists for one reason: to give every ophthalmologist the
+            Ophthalmology Business Academy (OBA) exists for one reason: to give every ophthalmologist the
             business education their clinical training skipped.
           </p>
           <div className="ab-hero-stats">
@@ -222,7 +297,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section style={{ paddingTop: 0 }}>
+      <section id="team" style={{ paddingTop: 0, scrollMarginTop: "80px" }}>
         <div className="wrap">
           <div className="sec-head center reveal">
             <span className="eyebrow">Who&apos;s behind it</span>
@@ -269,6 +344,24 @@ export default function AboutPage() {
             <div className="ekwa-stat"><b>15,000+</b><span>physicians served</span></div>
             <div className="ekwa-stat"><b>95%</b><span>client retention</span></div>
             <div className="ekwa-stat"><b>US + CA</b><span>private practices</span></div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ, citable answers with FAQPage schema above */}
+      <section className="ab-faq-sec" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sec-head center reveal">
+            <span className="eyebrow">Quick answers</span>
+            <h2>Common questions about the academy</h2>
+          </div>
+          <div className="ab-faq reveal">
+            {FAQS.map((f) => (
+              <details key={f.q}>
+                <summary>{f.q}</summary>
+                <p className="ans">{f.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

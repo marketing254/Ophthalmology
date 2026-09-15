@@ -4,7 +4,14 @@ import GuestForm from './GuestForm';
 export const metadata = {
   title: 'Apply as a Guest or Speaker',
   description:
-    'Apply to be a guest on the Ophthalmology Business Podcast or a panelist at our live events, share your expertise with practice owners, surgeons, and administrators.',
+    'Apply to join the Ophthalmology Business Podcast as a guest or speak on a live panel. Share your expertise with eye-care practice leaders.',
+  alternates: { canonical: '/guest-speaker/' },
+  openGraph: {
+    url: '/guest-speaker/',
+    title: 'Become a Guest or Speaker',
+    description: 'Join the Ophthalmology Business Podcast as a guest or speak on a live expert panel.',
+    images: [{ url: '/og/guest.png', width: 1200, height: 630, alt: 'Become a Guest or Speaker' }],
+  },
 };
 
 const PERKS = [
